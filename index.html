@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aayush Kushwaha — Builder & Developer</title>
+    <meta name="description" content="Portfolio of Aayush Kushwaha — a builder crafting solutions with Python, Flutter, Firebase, and Computer Vision. Explore projects like AlphaReader, Kingsmen, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/186934744?v=4" type="image/png">
+</head>
+<body>
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Animated background particles -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>AK<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="https://github.com/aayushk543" target="_blank" rel="noopener noreferrer" class="nav-github-btn">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
+                </svg>
+                <span>GitHub</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-greeting" data-animate="fade-up">
+                    <span class="greeting-line"></span>
+                    <span class="greeting-text">Hello, I'm</span>
+                </div>
+                <h1 class="hero-name" data-animate="fade-up" data-delay="100">
+                    Aayush<br><span class="name-gradient">Kushwaha</span>
+                </h1>
+                <p class="hero-tagline" data-animate="fade-up" data-delay="200">
+                    <span class="typewriter" id="typewriter"></span>
+                    <span class="typewriter-cursor">|</span>
+                </p>
+                <p class="hero-description" data-animate="fade-up" data-delay="300">
+                    Crafting elegant solutions through code. Passionate about 
+                    <span class="highlight">Computer Vision</span>, 
+                    <span class="highlight">Mobile Development</span>, and 
+                    <span class="highlight">Full-Stack Engineering</span>.
+                </p>
+                <div class="hero-cta" data-animate="fade-up" data-delay="400">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View Projects</span>
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                        </svg>
+                    </a>
+                    <a href="#contact" class="btn btn-outline">Get in Touch</a>
+                </div>
+                <div class="hero-stats" data-animate="fade-up" data-delay="500">
+                    <div class="stat">
+                        <span class="stat-number" data-count="6">0</span>
+                        <span class="stat-label">Public Repos</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="4">0</span>
+                        <span class="stat-label">Languages</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-label">Original Projects</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual" data-animate="fade-left" data-delay="200">
+                <div class="avatar-wrapper">
+                    <div class="avatar-ring"></div>
+                    <div class="avatar-ring avatar-ring-2"></div>
+                    <img src="https://avatars.githubusercontent.com/u/186934744?v=4" alt="Aayush Kushwaha" class="avatar-img">
+                    <div class="avatar-badge">
+                        <span class="badge-dot"></span>
+                        Builder
+                    </div>
+                </div>
+                <div class="floating-card card-1">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    <span>Python</span>
+                </div>
+                <div class="floating-card card-2">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 01-4.96.44 2.5 2.5 0 01-2.96-3.08 3 3 0 01-.34-5.58 2.5 2.5 0 011.32-4.24 2.5 2.5 0 011.98-3A2.5 2.5 0 019.5 2zM14.5 2A2.5 2.5 0 0012 4.5v15a2.5 2.5 0 004.96.44 2.5 2.5 0 002.96-3.08 3 3 0 00.34-5.58 2.5 2.5 0 00-1.32-4.24 2.5 2.5 0 00-1.98-3A2.5 2.5 0 0014.5 2z"/></svg>
+                    <span>Flutter</span>
+                </div>
+                <div class="floating-card card-3">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                    <span>Firebase</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" data-animate="fade-up" data-delay="600">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">01 — About Me</span>
+                <h2 class="section-title">Turning ideas into <span class="title-gradient">reality</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text" data-animate="fade-up" data-delay="100">
+                    <p>I'm <strong>Aayush Kushwaha</strong>, a passionate builder and developer who loves creating impactful software solutions. From computer vision systems to full-stack mobile applications, I enjoy working across the entire technology stack.</p>
+                    <p>My journey spans across <strong>Python</strong>, <strong>Flutter</strong>, <strong>Firebase</strong>, and <strong>C++</strong>, building projects that solve real-world problems. Whether it's an OCR system that reads text from images or a hackathon-winning proposal, I believe in shipping code that matters.</p>
+                    <p>When I'm not coding, I'm exploring new technologies, contributing to open source, and participating in hackathons to push the boundaries of what's possible.</p>
+                </div>
+                <div class="about-cards" data-animate="fade-up" data-delay="200">
+                    <div class="info-card">
+                        <div class="info-card-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                        </div>
+                        <h3>Continuous Learner</h3>
+                        <p>Always exploring cutting-edge tech from AI/ML to cross-platform development.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <h3>Full-Stack Builder</h3>
+                        <p>From mobile frontends to cloud backends — I build end-to-end solutions.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                        </div>
+                        <h3>Team Player</h3>
+                        <p>Hackathon veteran and collaborative developer who thrives in team settings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects-section" id="projects">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">02 — Projects</span>
+                <h2 class="section-title">Featured <span class="title-gradient">work</span></h2>
+                <p class="section-subtitle">A selection of projects that showcase my skills and passion for building.</p>
+            </div>
+
+            <!-- Featured Project -->
+            <div class="featured-project" data-animate="fade-up" data-delay="100">
+                <div class="featured-project-content">
+                    <span class="project-badge">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        Featured Project
+                    </span>
+                    <h3 class="featured-project-title">AlphaReader</h3>
+                    <p class="featured-project-desc">A Computer Vision based OCR (Optical Character Recognition) system built with Python. Leverages advanced image processing techniques to extract and digitize text from images with high accuracy.</p>
+                    <div class="project-tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">OCR</span>
+                        <span class="tech-tag">Image Processing</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/aayushk543/AlphaReader" target="_blank" rel="noopener noreferrer" class="project-link">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>
+                            View Source
+                        </a>
+                    </div>
+                </div>
+                <div class="featured-project-visual">
+                    <div class="code-window">
+                        <div class="code-window-header">
+                            <div class="window-dots">
+                                <span class="dot dot-red"></span>
+                                <span class="dot dot-yellow"></span>
+                                <span class="dot dot-green"></span>
+                            </div>
+                            <span class="window-title">alpha_reader.py</span>
+                        </div>
+                        <pre class="code-content"><code><span class="code-keyword">import</span> <span class="code-module">cv2</span>
+<span class="code-keyword">import</span> <span class="code-module">pytesseract</span>
+<span class="code-keyword">from</span> <span class="code-module">PIL</span> <span class="code-keyword">import</span> Image
+
+<span class="code-keyword">class</span> <span class="code-class">AlphaReader</span>:
+    <span class="code-keyword">def</span> <span class="code-function">__init__</span>(self):
+        self.engine = <span class="code-string">"tesseract"</span>
+        
+    <span class="code-keyword">def</span> <span class="code-function">extract_text</span>(self, image_path):
+        <span class="code-comment"># Preprocess & extract</span>
+        img = cv2.imread(image_path)
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        <span class="code-keyword">return</span> pytesseract.image_to_string(gray)</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="projects-grid">
+                <div class="project-card" data-animate="fade-up" data-delay="150">
+                    <div class="project-card-header">
+                        <div class="project-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                        </div>
+                        <a href="https://github.com/aayushk543/Kingsmen" target="_blank" rel="noopener noreferrer" class="project-external-link" aria-label="View Kingsmen on GitHub">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                        </a>
+                    </div>
+                    <h3 class="project-card-title">Kingsmen</h3>
+                    <p class="project-card-desc">Hackenza 2026 proposal — an innovative project built for competitive hackathon submission with comprehensive documentation.</p>
+                    <div class="project-card-footer">
+                        <div class="project-tech-tags">
+                            <span class="tech-tag-sm">Python</span>
+                            <span class="tech-tag-sm">Hackathon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-animate="fade-up" data-delay="200">
+                    <div class="project-card-header">
+                        <div class="project-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <a href="https://github.com/aayushk543/EnsureVault" target="_blank" rel="noopener noreferrer" class="project-external-link" aria-label="View EnsureVault on GitHub">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                        </a>
+                    </div>
+                    <h3 class="project-card-title">EnsureVault</h3>
+                    <p class="project-card-desc">A DBMS group project (CS-F212) featuring secure data management and robust database architecture design.</p>
+                    <div class="project-card-footer">
+                        <div class="project-tech-tags">
+                            <span class="tech-tag-sm">DBMS</span>
+                            <span class="tech-tag-sm">SQL</span>
+                            <span class="tech-tag-sm">Group Project</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-animate="fade-up" data-delay="250">
+                    <div class="project-card-header">
+                        <div class="project-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        </div>
+                        <a href="https://github.com/aayushk543/Dice_Game" target="_blank" rel="noopener noreferrer" class="project-external-link" aria-label="View Dice Game on GitHub">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                        </a>
+                    </div>
+                    <h3 class="project-card-title">Dice Game</h3>
+                    <p class="project-card-desc">A full-stack mobile application built with Flutter for the frontend and Firebase for the backend services.</p>
+                    <div class="project-card-footer">
+                        <div class="project-tech-tags">
+                            <span class="tech-tag-sm">Flutter</span>
+                            <span class="tech-tag-sm">Firebase</span>
+                            <span class="tech-tag-sm">Dart</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-animate="fade-up" data-delay="300">
+                    <div class="project-card-header">
+                        <div class="project-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                        </div>
+                        <a href="https://github.com/aayushk543/BMI-Calculator" target="_blank" rel="noopener noreferrer" class="project-external-link" aria-label="View BMI Calculator on GitHub">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                        </a>
+                    </div>
+                    <h3 class="project-card-title">BMI Calculator</h3>
+                    <p class="project-card-desc">A clean, intuitive health application built with Flutter for calculating and tracking Body Mass Index.</p>
+                    <div class="project-card-footer">
+                        <div class="project-tech-tags">
+                            <span class="tech-tag-sm">Flutter</span>
+                            <span class="tech-tag-sm">Dart</span>
+                            <span class="tech-tag-sm">Health</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-animate="fade-up" data-delay="350">
+                    <div class="project-card-header">
+                        <div class="project-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/><path d="M8 17V5l12-2v12"/></svg>
+                        </div>
+                        <a href="https://github.com/aayushk543/lmms" target="_blank" rel="noopener noreferrer" class="project-external-link" aria-label="View LMMS fork on GitHub">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                        </a>
+                    </div>
+                    <h3 class="project-card-title">LMMS</h3>
+                    <p class="project-card-desc">Contributing to LMMS — a free, cross-platform music production software. Open source contribution in C++.</p>
+                    <div class="project-card-footer">
+                        <div class="project-tech-tags">
+                            <span class="tech-tag-sm">C++</span>
+                            <span class="tech-tag-sm">Open Source</span>
+                            <span class="tech-tag-sm">Music</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills-section" id="skills">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">03 — Skills</span>
+                <h2 class="section-title">Tech <span class="title-gradient">stack</span></h2>
+                <p class="section-subtitle">Technologies and tools I use to bring ideas to life.</p>
+            </div>
+            <div class="skills-grid" data-animate="fade-up" data-delay="100">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        Languages
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-dot" style="--dot-color: #3572A5"></div>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-dot" style="--dot-color: #00B4AB"></div>
+                            <span>Dart</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-dot" style="--dot-color: #f34b7d"></div>
+                            <span>C++</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-dot" style="--dot-color: #e34c26"></div>
+                            <span>SQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        Frameworks
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-dot" style="--dot-color: #02569B"></div>
+                            <span>Flutter</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-dot" style="--dot-color: #5C3EE8"></div>
+                            <span>OpenCV</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-dot" style="--dot-color: #764ABC"></div>
+                            <span>Tesseract</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Tools & Platforms
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-dot" style="--dot-color: #FFCA28"></div>
+                            <span>Firebase</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-dot" style="--dot-color: #F05032"></div>
+                            <span>Git & GitHub</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-dot" style="--dot-color: #007ACC"></div>
+                            <span>VS Code</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                        Concepts
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-dot" style="--dot-color: #FF6B6B"></div>
+                            <span>Computer Vision</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-dot" style="--dot-color: #4ECDC4"></div>
+                            <span>DBMS Design</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-dot" style="--dot-color: #45B7D1"></div>
+                            <span>Mobile Development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Activity Section -->
+    <section class="section github-section">
+        <div class="container">
+            <div class="github-cta" data-animate="fade-up">
+                <div class="github-cta-content">
+                    <h2>Let's build something <span class="title-gradient">amazing</span> together</h2>
+                    <p>Check out my GitHub for the latest projects, contributions, and code.</p>
+                    <a href="https://github.com/aayushk543" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>
+                        <span>Visit My GitHub</span>
+                    </a>
+                </div>
+                <div class="github-cta-visual">
+                    <div class="contribution-graph">
+                        <div class="graph-row" id="contribGraph"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content" data-animate="fade-up">
+                <div class="section-header">
+                    <span class="section-tag">04 — Contact</span>
+                    <h2 class="section-title">Get in <span class="title-gradient">touch</span></h2>
+                    <p class="section-subtitle">Feel free to reach out for collaborations, opportunities, or just a chat about tech.</p>
+                </div>
+                <div class="contact-links">
+                    <a href="https://github.com/aayushk543" target="_blank" rel="noopener noreferrer" class="contact-link">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/></svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="mailto:aayushk543@gmail.com" class="contact-link">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>Email</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aayush Kushwaha. Built with passion and code.</p>
+                <p class="footer-made">Designed & Developed with <span class="heart">♥</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
