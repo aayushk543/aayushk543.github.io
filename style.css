@@ -329,7 +329,6 @@ img {
     margin-bottom: 48px;
 }
 
-// buttons
 .btn {
     display: inline-flex;
     align-items: center;
@@ -396,7 +395,6 @@ img {
     font-size: 1rem;
 }
 
-// stats
 .hero-stats {
     display: flex;
     align-items: center;
@@ -432,7 +430,6 @@ img {
     background: var(--border-color);
 }
 
-/* Avatar */
 .hero-visual {
     display: flex;
     justify-content: center;
@@ -1094,7 +1091,6 @@ img {
     font-size: 1.0625rem;
 }
 
-// graph
 .contribution-graph {
     display: grid;
     grid-template-columns: repeat(20, 1fr);
