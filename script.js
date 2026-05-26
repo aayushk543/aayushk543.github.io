@@ -58,8 +58,7 @@ function initParticles() {
             ctx.fill();
         }
     }
-
-    //particles based on screen size
+    
     const particleCount = Math.min(80, Math.floor((canvas.width * canvas.height) / 15000));
     for (let i = 0; i < particleCount; i++) {
         particles.push(new Particle());
@@ -73,7 +72,6 @@ function initParticles() {
             p.draw();
         });
 
-        // Draw connections
         for (let i = 0; i < particles.length; i++) {
             for (let j = i + 1; j < particles.length; j++) {
                 const dx = particles[i].x - particles[j].x;
@@ -91,14 +89,11 @@ function initParticles() {
                 }
             }
         }
-
         animationId = requestAnimationFrame(animate);
     }
-
     animate(0);
 }
 
-// glow affect
 function initCursorGlow() {
     const glow = document.getElementById('cursorGlow');
     if (!glow) return;
@@ -130,7 +125,6 @@ function initCursorGlow() {
     updateGlow();
 }
 
-// navbar
 function initNavbar() {
     const navbar = document.getElementById('navbar');
     if (!navbar) return;
@@ -150,9 +144,6 @@ function initNavbar() {
     }, { passive: true });
 }
 
-/* ================================
-   Typewriter Effect
-   ================================ */
 function initTypewriter() {
     const element = document.getElementById('typewriter');
     if (!element) return;
@@ -197,16 +188,13 @@ function initTypewriter() {
                 phraseIndex = (phraseIndex + 1) % phrases.length;
             }
         }
-
         const speed = isDeleting ? 35 : 65;
         setTimeout(type, speed);
     }
 
-    // timer
     setTimeout(type, 1000);
 }
 
-// animation
 function initScrollAnimations() {
     const elements = document.querySelectorAll('[data-animate]');
 
@@ -260,7 +248,6 @@ function animateCounter(element, target) {
     }, stepTime);
 }
 
-// contribution graph
 function initContributionGraph() {
     const container = document.getElementById('contribGraph');
     if (!container) return;
@@ -271,7 +258,6 @@ function initContributionGraph() {
         const cell = document.createElement('div');
         cell.className = 'contrib-cell';
 
-        // weighted random to make it look realistic lol
         const rand = Math.random();
         if (rand > 0.7) {
             cell.classList.add(`level-${Math.ceil(Math.random() * 4)}`);
@@ -282,7 +268,6 @@ function initContributionGraph() {
 
     container.appendChild(fragment);
 
-    // Animate cells appearing
     const cells = container.querySelectorAll('.contrib-cell');
     cells.forEach((cell, i) => {
         cell.style.opacity = '0';
@@ -296,7 +281,6 @@ function initContributionGraph() {
     });
 }
 
-// smooth scrolling
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(link => {
 
@@ -310,8 +294,6 @@ function initSmoothScroll() {
                     behavior: 'smooth',
                     block: 'start'
                 });
-
-                // Close mobile menu if open
                 const navLinks = document.getElementById('navLinks');
                 if (navLinks) navLinks.classList.remove('active');
             }
