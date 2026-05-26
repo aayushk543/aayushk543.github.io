@@ -1,8 +1,3 @@
-/* ================================
-   Portfolio JavaScript
-   Aayush Kushwaha — GitHub Portfolio
-   ================================ */
-
 document.addEventListener('DOMContentLoaded', () => {
     initParticles();
     initCursorGlow();
@@ -15,9 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
 });
 
-/* ================================
-   Particle Background
-   ================================ */
 function initParticles() {
     const canvas = document.getElementById('particleCanvas');
     if (!canvas) return;
@@ -67,7 +59,7 @@ function initParticles() {
         }
     }
 
-    // Create particles based on screen size
+    //particles based on screen size
     const particleCount = Math.min(80, Math.floor((canvas.width * canvas.height) / 15000));
     for (let i = 0; i < particleCount; i++) {
         particles.push(new Particle());
@@ -106,14 +98,12 @@ function initParticles() {
     animate(0);
 }
 
-/* ================================
-   Cursor Glow Effect
-   ================================ */
+// glow affect
 function initCursorGlow() {
     const glow = document.getElementById('cursorGlow');
     if (!glow) return;
 
-    // Only enable on desktop
+    
     if (window.innerWidth < 768) {
         glow.style.display = 'none';
         return;
@@ -140,9 +130,7 @@ function initCursorGlow() {
     updateGlow();
 }
 
-/* ================================
-   Navbar Scroll Effect
-   ================================ */
+// navbar
 function initNavbar() {
     const navbar = document.getElementById('navbar');
     if (!navbar) return;
@@ -214,13 +202,11 @@ function initTypewriter() {
         setTimeout(type, speed);
     }
 
-    // Start after a brief delay
+    // timer
     setTimeout(type, 1000);
 }
 
-/* ================================
-   Scroll Animations
-   ================================ */
+// animation
 function initScrollAnimations() {
     const elements = document.querySelectorAll('[data-animate]');
 
@@ -242,9 +228,6 @@ function initScrollAnimations() {
     elements.forEach(el => observer.observe(el));
 }
 
-/* ================================
-   Counter Animation
-   ================================ */
 function initCounterAnimation() {
     const counters = document.querySelectorAll('[data-count]');
 
@@ -277,14 +260,10 @@ function animateCounter(element, target) {
     }, stepTime);
 }
 
-/* ================================
-   Contribution Graph
-   ================================ */
+// contribution graph
 function initContributionGraph() {
     const container = document.getElementById('contribGraph');
     if (!container) return;
-
-    // Generate a realistic-looking contribution graph
     const cellCount = 140;
     const fragment = document.createDocumentFragment();
 
@@ -292,7 +271,7 @@ function initContributionGraph() {
         const cell = document.createElement('div');
         cell.className = 'contrib-cell';
 
-        // Weighted random to make it look realistic
+        // weighted random to make it look realistic lol
         const rand = Math.random();
         if (rand > 0.7) {
             cell.classList.add(`level-${Math.ceil(Math.random() * 4)}`);
@@ -317,11 +296,10 @@ function initContributionGraph() {
     });
 }
 
-/* ================================
-   Smooth Scroll
-   ================================ */
+// smooth scrolling
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(link => {
+
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
@@ -341,9 +319,6 @@ function initSmoothScroll() {
     });
 }
 
-/* ================================
-   Mobile Menu
-   ================================ */
 function initMobileMenu() {
     const menuBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
@@ -354,7 +329,6 @@ function initMobileMenu() {
         navLinks.classList.toggle('active');
         menuBtn.classList.toggle('active');
 
-        // Animate hamburger to X
         const spans = menuBtn.querySelectorAll('span');
         if (navLinks.classList.contains('active')) {
             spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
